@@ -24,10 +24,14 @@ def concat(df):
         b = '+'
         c = df.iloc[i][1]
         url = z+a+b+c
+        print('Pesquisando por: {}'.format(a+' '+c))
         abrir_aba(url)
-        print('Pesquisando por: {}'.format(url))
+        pesquisar(url)
+        print('-'*20)
+        time.sleep(0.5)
+        fechar_nav()
         
-
+        
 
 def abrir_nav(url):
     wb.open_new(url)
@@ -42,13 +46,22 @@ def fechar_nav():
     pyg.hotkey('ctrl', 'w')
 
 
-def pesquisar():
+def pesquisar(url):
+    link = str("'"+ url +"'")
+    headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
+    requisicao = requests.get(url, headers=headers)
+
+
+    site = BeautifulSoup(requisicao.text, 'html.parser')
+
+    h3 = site.find_all(class_='qLRx3b tjvcx GvPZzd cHaqb', role='text', limit=5)
+    print(h3)
+
+def format_dataset ():
     pass
-    time.sleep(3)
+
 
 
 
 importar('D:\Projetos Python\Dev-Projetcs\dataset_wbs.csv')
 concat(df)
-
-

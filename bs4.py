@@ -23,11 +23,8 @@ pesquisa2 = site.find_all(class_='qLRx3b tjvcx GvPZzd cHaqb', role='text')
 print(pesquisa2)
 
 
-h3 = site.find('h3', limit = 2)
-print(h3)
 
+# import webbrowser
 
-import webbrowser
-
-webbrowser.open_new('https://www.google.com/search?q=ceo+google')
-webbrowser.close
+# webbrowser.open_new('https://www.google.com/search?q=ceo+google')
+# webbrowser.close

@@ -17,7 +17,12 @@ def importar(caminho):
 
 
 def concat(df):
+    global dicio
+    dicio = {}
     global url
+    global a
+    global c
+
     for i in range (len(df)):
         z = 'https://www.google.com/search?q='
         a = df.iloc[i][0]
@@ -57,15 +62,46 @@ def pesquisar(url):
 
     h3 = site.find_all(jsname='UWckNb', limit=5)
     #print(h3)
-    for link in h3:
-        print(link['href'])
+    
+    lista = []
 
-def format_dataset ():
-    pass
+    for link in h3:
+        i = a+' '+c
+        lista.append(link['href'])
+        dicio [i] = lista
+    print(dicio)
+
+def format_dataset(df, dicio):
+    df2 = df
+    df2['search'] = str(list(dicio.values())[0][0])
+
+    for i in range(int(len((list(dicio.values()))))):
+        df2.at[i,'search'] = str(list(dicio.values())[i])
+   
 
 
 
 
 importar('D:\Projetos Python\Dev-Projetcs\dataset_wbs.csv')
 concat(df)
-print(url)
+format_dataset(df,dicio)
+
+
+
+# print(dicio.keys())
+# print(len(list(dicio.values())))
+# print(dicio.items())
+display(df)
+# print(list(dicio.values())[0][0])
+
+# df2 = df
+# df2['search'] = str(list(dicio.values())[0])
+
+# display(df2)
+
+# for i in range(int(len((list(dicio.values()))))):
+#     df2.at[i,'search'] = str(list(dicio.values())[i])
+
+# display(df2)
+
+# print(type(int(len(list(dicio.values())))))

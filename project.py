@@ -31,6 +31,7 @@ def concat(df):
         time.sleep(0.5)
         fechar_nav()
         
+    #fechar_nav()
         
 
 def abrir_nav(url):
@@ -54,8 +55,10 @@ def pesquisar(url):
 
     site = BeautifulSoup(requisicao.text, 'html.parser')
 
-    h3 = site.find_all(class_='qLRx3b tjvcx GvPZzd cHaqb', role='text', limit=5)
+    h3 = site.find_all(jsname='UWckNb', limit=5)
     print(h3)
+    for link in h3:
+        print(link['href'])
 
 def format_dataset ():
     pass
@@ -65,3 +68,4 @@ def format_dataset ():
 
 importar('D:\Projetos Python\Dev-Projetcs\dataset_wbs.csv')
 concat(df)
+print(url)

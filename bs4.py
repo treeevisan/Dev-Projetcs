@@ -19,8 +19,21 @@ h3 = site.find_all('h3', limit = 5)
 print(h3)
 
 
-pesquisa2 = site.find_all(class_='qLRx3b tjvcx GvPZzd cHaqb', role='text')
+pesquisa2 = site.find_all(class_='qLRx3b tjvcx GvPZzd cHaqb', role='text', limit=1)
+print(len(pesquisa2))
 print(pesquisa2)
+
+
+pesquisa3 = site.find_all(jsname='UWckNb', limit=5)
+print(len(pesquisa3))
+print(pesquisa3)
+print(pesquisa3[0]['href'])
+
+
+h1 = site.find_all('a')
+print(h1[60].attrs)
+print(len(h1))
+print(h1)
 
 
 

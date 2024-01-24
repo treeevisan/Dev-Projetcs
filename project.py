@@ -33,7 +33,7 @@ def concat(df):
         abrir_aba(url)
         pesquisar(url)
         print('-'*20)
-        time.sleep(0.5)
+        time.sleep(0.1)
         fechar_nav()
         
     #fechar_nav()
@@ -87,21 +87,12 @@ concat(df)
 format_dataset(df,dicio)
 
 
-
 # print(dicio.keys())
 # print(len(list(dicio.values())))
 # print(dicio.items())
+
 display(df)
-# print(list(dicio.values())[0][0])
 
-# df2 = df
-# df2['search'] = str(list(dicio.values())[0])
+df.to_csv('final.csv')
 
-# display(df2)
-
-# for i in range(int(len((list(dicio.values()))))):
-#     df2.at[i,'search'] = str(list(dicio.values())[i])
-
-# display(df2)
-
-# print(type(int(len(list(dicio.values())))))
+df.info()

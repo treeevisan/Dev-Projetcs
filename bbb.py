@@ -17,14 +17,14 @@ print(requisicao)
 site = BeautifulSoup(requisicao.text, 'html.parser')
 #print(site.prettify())
 
-h3 = site.find_all('h3', limit = 5)
+# h3 = site.find_all('h3', limit = 5)
 
-print(h3)
+# print(h3)
 
 
-pesquisa2 = site.find_all(class_='qLRx3b tjvcx GvPZzd cHaqb', role='text', limit=1)
-print(len(pesquisa2))
-print(pesquisa2)
+# pesquisa2 = site.find_all(class_='qLRx3b tjvcx GvPZzd cHaqb', role='text', limit=1)
+# print(len(pesquisa2))
+# print(pesquisa2)
 
 
 pesquisa3 = site.find_all(jsname='UWckNb', limit=5)
@@ -32,15 +32,21 @@ print(len(pesquisa3))
 print(pesquisa3)
 print(pesquisa3[0]['href'])
 
-
-h1 = site.find_all('a')
-print(h1[60].attrs)
-print(len(h1))
-print(h1)
+h4 = site.find_all(class_='LC20lb MBeuO DKV0Md', limit=5)
+print(len(h4))
+print(h4[1]['class'])
 
 
 
-# import webbrowser
 
-# webbrowser.open_new('https://www.google.com/search?q=ceo+google')
+# h1 = site.find_all('a')
+# print(h1[60].attrs)
+# print(len(h1))
+# print(h1)
+
+
+
+import webbrowser
+
+webbrowser.open_new('https://www.google.com/search?q=ceo+google')
 # webbrowser.close

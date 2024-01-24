@@ -56,7 +56,7 @@ def pesquisar(url):
     site = BeautifulSoup(requisicao.text, 'html.parser')
 
     h3 = site.find_all(jsname='UWckNb', limit=5)
-    print(h3)
+    #print(h3)
     for link in h3:
         print(link['href'])
 

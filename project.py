@@ -29,7 +29,7 @@ def concat(df):
         b = '+'
         c = df.iloc[i][1]
         url = z+a+b+c
-        print('Pesquisando por: {}'.format(a+' '+c))
+        print('Searching for: {}'.format(a+' '+c))
         abrir_aba(url)
         pesquisar(url)
         print('-'*20)
@@ -82,7 +82,7 @@ def format_dataset(df, dicio):
 
 
 
-importar('D:\Projetos Python\Dev-Projetcs\dataset_wbs.csv')
+importar('D:\Projetos Python\Dev-Projetcs\eba250 subset.csv')
 concat(df)
 format_dataset(df,dicio)
 
@@ -93,6 +93,6 @@ format_dataset(df,dicio)
 
 display(df)
 
-df.to_csv('final.csv')
+df.to_csv('final_eba250.csv')
 
 df.info()

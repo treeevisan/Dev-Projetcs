@@ -96,3 +96,4 @@ display(df)
 df.to_csv('final_eba250.csv')
 
 df.info()
+
